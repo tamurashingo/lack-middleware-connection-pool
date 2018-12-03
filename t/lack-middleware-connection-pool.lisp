@@ -19,7 +19,7 @@
   (dbi-cp:do-sql conn "create table product (id integer primary key, name varchar(20) not null, price integer not null)")
   (dbi-cp:do-sql conn "insert into product (id, name, price) values (1, 'NES', 14800)")
   (dbi-cp:commit conn)
-  (disconnect conn))
+  (dbi-cp:disconnect conn))
 
 
 
