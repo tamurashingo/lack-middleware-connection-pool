@@ -17,7 +17,7 @@ install:
   - qlot install
 
 before_script:
-  - mysql -uroot -e 'GRANT ALL ON *.* TO root@"localhost" IDENTIFIED BY "password"'
+  - mysql -uroot -e 'GRANT ALL ON *.* TO nobody@"localhost" IDENTIFIED BY "nobody"'
   - mysql -e 'CREATE DATABASE `cptest`'
 
 script:

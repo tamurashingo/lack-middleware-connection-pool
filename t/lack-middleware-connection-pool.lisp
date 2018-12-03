@@ -13,8 +13,8 @@
 
 (let ((connection (dbi:connect :mysql
                                :database-name "cptest"
-                               :username "root"
-                               :password "password")))
+                               :username "nobody"
+                               :password "nobody")))
   (dbi-cp:do-sql conn "drop table if exists product")
   (dbi-cp:do-sql conn "create table product (id integer primary key, name varchar(20) not null, price integer not null)")
   (dbi-cp:do-sql conn "insert into product (id, name, price) values (1, 'NES', 14800)")
@@ -39,8 +39,8 @@
           (:lack-middleware-connection-pool
            :driver-name :mysql
            :database-name "cptest"
-           :username "root"
-           :password "password")
+           :username "nobody"
+           :password "nobody")
           #'(lambda (env)
               (let* ((req (make-request env))
                      (conn (getf env :lack.db.connection)))
