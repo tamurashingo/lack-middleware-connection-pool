@@ -3,7 +3,7 @@
   (:use :cl
         :prove
         :lack
-        :lack.tet
+        :lack.test
         :lack.request)
   (:shadowing-import-from :lack.test
                           :request))
