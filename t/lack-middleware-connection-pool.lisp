@@ -23,7 +23,7 @@
 
 
 
-(defund select-count (conn)
+(defun select-count (conn)
   (let* ((query (dbi-cp:prepare conn "select count(*) as num from product"))
          (result (dbi-cp:execute query)))
     (getf (dbi-cp:fetch result) :|num|)))
