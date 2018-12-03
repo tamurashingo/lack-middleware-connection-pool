@@ -1,0 +1,24 @@
+language: common-lisp
+sudo: false
+
+env:
+  global:
+    - PATH=$HOME/.roswell/bin:$PATH
+    - ROSWELL_INSTALL_DIR=$HOME/.roswell
+  matrix:
+    - LISP=sbcl-bin
+    - LISP=ccl-bin
+
+install:
+  # Install Roswell
+  - curl -L https://raw.githubusercontent.com/roswell/roswell/release/scripts/install-for-ci.sh | sh
+  - ros install prove
+  - ros install qlot
+  - qlot install
+
+before_script:
+  - mysql -uroot -e 'GRANT ALL ON *.* TO root@"localhost" IDENTIFIED BY "password"'
+  - mysql -e 'CREATE DATABASE `cptest`'
+
+script:
+  - run-prove lack-middleware-connection-pool-test.asd
