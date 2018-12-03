@@ -1,9 +1,9 @@
 (in-package :cl-user)
-(defpackage lack-middleware-connection-pool
+(defpackage lack.middleware.connection.pool
   (:use :cl)
   (:export :*lack-middleware-connection-pool*
            :shutdown))
-(in-package :lack-middleware-connection-pool)
+(in-package :lack.middleware.connection.pool)
 
 (defparameter *CONNECTION-POOL* nil)
 
