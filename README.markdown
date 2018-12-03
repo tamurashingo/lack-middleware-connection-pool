@@ -1,4 +1,6 @@
 # Lack-Middleware-Connection-Pool 
+[![Build Status](https://travis-ci.org/tamurashingo/lack-middleware-connection-pool.svg?branch=master)](https:// travis-ci.org/tamurashingo/lack-middleware-connection-pool)
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)
 
 CL-DBI Connection Pool for Lack
 
@@ -8,7 +10,7 @@ CL-DBI Connection Pool for Lack
 
 ```common-lisp
 (lack:builder
-  (:lack-middleware-connection-pol
+  (:connection-pol
    :driver-name :mysql
    :database-name "test"
    :username "root"
