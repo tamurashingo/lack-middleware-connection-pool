@@ -11,10 +11,10 @@
 
 (plan 1)
 
-(let ((connection (dbi:connect :mysql
-                               :database-name "cptest"
-                               :username "nobody"
-                               :password "nobody")))
+(let ((conn (dbi:connect :mysql
+                         :database-name "cptest"
+                         :username "nobody"
+                         :password "nobody")))
   (dbi-cp:do-sql conn "drop table if exists product")
   (dbi-cp:do-sql conn "create table product (id integer primary key, name varchar(20) not null, price integer not null)")
   (dbi-cp:do-sql conn "insert into product (id, name, price) values (1, 'NES', 14800)")
