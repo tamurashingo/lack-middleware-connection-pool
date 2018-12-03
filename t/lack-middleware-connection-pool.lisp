@@ -55,7 +55,7 @@
     (diag "select count")
     (destructuring-bind (stattus headers body)
         (funcall app (generate-env "/"))
-      (is body 1))
+      (is body '(1)))
 
     (diag "insert")
     (destructuring-bind (stattus headers body)
@@ -64,7 +64,7 @@
     (diag "select count")
     (destructuring-bind (stattus headers body)
         (funcall app (generate-env "/"))
-      (is body 2))))
+      (is body '(2)))))
 
 (lack.middleware.connection.pool:shutdown)
   
