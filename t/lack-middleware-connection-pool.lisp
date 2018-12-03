@@ -36,7 +36,7 @@
 (subtest "connection pool middleware"
   (let ((app
          (builder
-          (:lack-middleware-connection-pool
+          (:connection-pool
            :driver-name :mysql
            :database-name "cptest"
            :username "nobody"
@@ -66,6 +66,6 @@
         (funcall app (generate-env "/"))
       (is body 2))))
 
-(lack-middleware-connection-pool:shutdown)
+(lack.middleware.connection.pool:shutdown)
   
 (finalize)
